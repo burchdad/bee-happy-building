@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Start Your Project | Bee Happy Building Systems</title>
+    <meta name="description" content="Start a custom barndominium, metal building, shop, garage, commercial, or agricultural building project with Bee Happy Building Systems." />
+    <link rel="stylesheet" href="/src/styles.css" />
+  </head>
+  <body>
+    <header class="site-header" data-header>
+      <a class="brand" href="/"><span class="brand-mark">BH</span><span>Bee Happy<br />Building Systems</span></a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span></span><span></span></button>
+      <nav id="site-nav" class="site-nav"><a href="/barndominiums/">Barndominiums</a><a href="/commercial-buildings/">Commercial</a><a href="/shops-garages/">Shops & Garages</a><a href="/gallery/">Gallery</a><a href="/build-process/">Process</a><a href="/about/">About</a><a href="/faq/">FAQ</a><a href="/financing/">Financing</a><a href="/resources/">Resources</a><a class="nav-cta" href="/contact/" aria-current="page">Contact</a></nav>
+    </header>
+    <main>
+      <section class="gallery-hero section-pad"><p class="eyebrow">Project Planner</p><h1>Tell us what you want to build.</h1><p>A better intake flow for serious projects: type, county, square footage, budget, land status, inspiration, and consultation details.</p></section>
+      <section id="planner" class="planner section-pad compact-top">
+        <div class="planner-copy"><p class="eyebrow">Guided Intake</p><h2>No boring contact form.</h2><p>This planner is structured for CRM, scheduling, project portal, document center, and future client dashboard integrations.</p><div class="contact-lines"><a href="tel:+19030000000">Call: (903) 000-0000</a><a href="mailto:hello@beehappybuildings.com">hello@beehappybuildings.com</a></div></div>
+        <form class="planner-form" data-planner>
+          <div class="planner-progress"><span data-progress></span></div>
+          <fieldset class="planner-step active" data-step="0"><legend>Project Type</legend><select name="projectType" required><option value="">Choose one</option><option>Custom Barndominium</option><option>Commercial Building</option><option>Shop or Garage</option><option>Agricultural Building</option></select></fieldset>
+          <fieldset class="planner-step" data-step="1"><legend>County</legend><input name="county" placeholder="Smith, Gregg, Rusk..." required /></fieldset>
+          <fieldset class="planner-step" data-step="2"><legend>Desired Square Footage</legend><input name="squareFootage" type="number" min="400" step="100" placeholder="2400" required /></fieldset>
+          <fieldset class="planner-step" data-step="3"><legend>Timeline</legend><select name="timeline" required><option value="">Select timeline</option><option>As soon as possible</option><option>3-6 months</option><option>6-12 months</option><option>Just researching</option></select></fieldset>
+          <fieldset class="planner-step" data-step="4"><legend>Estimated Budget</legend><select name="budget" required><option value="">Select range</option><option>$75k-$150k</option><option>$150k-$300k</option><option>$300k-$600k</option><option>$600k+</option></select></fieldset>
+          <fieldset class="planner-step" data-step="5"><legend>Land Owned?</legend><div class="choice-row"><label><input type="radio" name="land" value="yes" required /> Yes</label><label><input type="radio" name="land" value="no" /> Not yet</label></div></fieldset>
+          <fieldset class="planner-step" data-step="6"><legend>Upload Inspiration Photos</legend><input name="inspiration" type="file" multiple accept="image/*" /></fieldset>
+          <fieldset class="planner-step" data-step="7"><legend>Schedule Consultation</legend><input name="name" placeholder="Name" required /><input name="phone" placeholder="Phone" required /><input name="email" type="email" placeholder="Email" required /></fieldset>
+          <div class="planner-actions"><button class="button secondary" data-prev type="button">Back</button><button class="button primary" data-next type="button">Next</button></div>
+        </form>
+      </section>
+    </main>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

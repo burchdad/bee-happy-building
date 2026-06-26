@@ -94,15 +94,19 @@ select {
 .site-nav {
   align-items: center;
   display: flex;
-  gap: clamp(16px, 2.2vw, 32px);
-  font-size: 0.84rem;
+  gap: clamp(8px, 1vw, 18px);
+  font-size: 0.74rem;
   font-weight: 700;
+}
+
+.site-nav a[aria-current="page"] {
+  color: var(--gold);
 }
 
 .nav-cta {
   border: 1px solid currentColor;
   border-radius: 999px;
-  padding: 12px 18px;
+  padding: 11px 15px;
 }
 
 .nav-toggle {
@@ -503,10 +507,12 @@ figcaption small {
   background: #ebe2d1;
 }
 
-.portfolio-row button {
+.portfolio-row a {
   border-radius: 0;
   font-size: clamp(1.25rem, 3vw, 2.9rem);
   padding: 18px 24px;
+  border: 1px solid var(--line);
+  font-family: Georgia, "Times New Roman", serif;
 }
 
 .testimonials {
@@ -647,6 +653,24 @@ legend {
   margin-top: 34px;
 }
 
+.planner-preview {
+  align-self: stretch;
+  background:
+    linear-gradient(135deg, rgba(255, 250, 240, 0.12), rgba(255, 250, 240, 0.02)),
+    rgba(255, 250, 240, 0.06);
+  display: grid;
+  gap: 1px;
+  padding: clamp(22px, 4vw, 42px);
+}
+
+.planner-preview span {
+  border-top: 1px solid rgba(255, 250, 240, 0.18);
+  color: rgba(255, 250, 240, 0.78);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.45rem, 3vw, 2.6rem);
+  padding: 18px 0;
+}
+
 .final-cta {
   align-items: center;
   color: var(--paper);
@@ -669,6 +693,10 @@ legend {
   max-width: 970px;
   position: relative;
   z-index: 2;
+}
+
+.final-cta.small {
+  min-height: 54svh;
 }
 
 .final-cta .button {
@@ -698,6 +726,222 @@ legend {
 .reveal.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+.page-hero,
+.gallery-hero {
+  color: var(--paper);
+  min-height: 82svh;
+  overflow: hidden;
+  position: relative;
+}
+
+.page-hero > img {
+  height: 100%;
+  inset: 0;
+  object-fit: cover;
+  position: absolute;
+}
+
+.page-hero-content {
+  max-width: 1080px;
+  padding: 25svh clamp(22px, 7vw, 92px) 14svh;
+  position: relative;
+  z-index: 2;
+}
+
+.page-hero-content p:not(.eyebrow),
+.gallery-hero p:not(.eyebrow) {
+  font-size: clamp(1.05rem, 1.8vw, 1.45rem);
+  line-height: 1.65;
+  max-width: 760px;
+}
+
+.page-hero-content .button {
+  margin-top: 10px;
+}
+
+.gallery-hero {
+  background:
+    linear-gradient(90deg, rgba(36, 63, 47, 0.96), rgba(47, 41, 31, 0.86)),
+    url("/assets/east-texas-barndominium-hero.png") center/cover;
+  display: grid;
+  min-height: 64svh;
+  place-content: end start;
+}
+
+.gallery-hero h1,
+.page-hero h1 {
+  font-size: clamp(3.4rem, 8vw, 8.4rem);
+  max-width: 1100px;
+}
+
+.compact-top {
+  padding-top: clamp(34px, 5vw, 72px);
+}
+
+.split-feature {
+  align-items: center;
+  display: grid;
+  gap: clamp(32px, 6vw, 88px);
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 0.82fr);
+}
+
+.feature-copy {
+  display: grid;
+  gap: 18px;
+}
+
+.feature-copy p {
+  color: var(--muted);
+  font-size: clamp(1.05rem, 1.5vw, 1.28rem);
+  line-height: 1.78;
+  margin: 0;
+}
+
+.feature-copy h2 {
+  color: var(--ink);
+}
+
+.feature-image {
+  aspect-ratio: 4 / 5;
+  background:
+    linear-gradient(180deg, rgba(36, 31, 23, 0.08), rgba(36, 31, 23, 0.18)),
+    url("/assets/east-texas-barndominium-hero.png") center/cover;
+  box-shadow: var(--shadow);
+}
+
+.spec-grid,
+.portfolio-deep,
+.resource-grid {
+  display: grid;
+  gap: 1px;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.portfolio-deep {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.spec-grid article,
+.portfolio-deep article,
+.resource-item {
+  background: rgba(255, 250, 240, 0.58);
+  min-height: 320px;
+  padding: clamp(26px, 4vw, 46px);
+}
+
+.spec-grid span {
+  color: var(--gold);
+  display: block;
+  font-weight: 950;
+  margin-bottom: 28px;
+}
+
+.spec-grid h2,
+.portfolio-deep h2,
+.resource-item h2,
+.detail-list h2 {
+  font-size: clamp(2rem, 3.5vw, 4rem);
+}
+
+.spec-grid p,
+.portfolio-deep p,
+.resource-item p,
+.detail-list li {
+  color: var(--muted);
+  font-size: 1.05rem;
+  line-height: 1.75;
+}
+
+.page-band {
+  background: var(--bronze);
+  color: var(--paper);
+  padding: clamp(90px, 13vw, 180px) clamp(22px, 7vw, 96px);
+}
+
+.page-band div {
+  max-width: 1100px;
+}
+
+.page-band h2 {
+  font-size: clamp(2.4rem, 6vw, 6.5rem);
+}
+
+.detail-list {
+  display: grid;
+  gap: clamp(32px, 6vw, 90px);
+  grid-template-columns: minmax(260px, 0.55fr) minmax(0, 1fr);
+}
+
+.detail-list ul {
+  border-top: 1px solid var(--line);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.detail-list li {
+  border-bottom: 1px solid var(--line);
+  padding: 22px 0;
+}
+
+.milestone-band {
+  background: var(--forest);
+  color: var(--paper);
+  display: grid;
+  gap: 1px;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.milestone-band div {
+  border-top: 1px solid rgba(255, 250, 240, 0.2);
+  padding-top: 22px;
+}
+
+.milestone-band strong {
+  color: var(--gold);
+  display: block;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(3rem, 7vw, 7rem);
+  font-weight: 500;
+}
+
+.milestone-band span {
+  color: rgba(255, 250, 240, 0.78);
+  font-weight: 800;
+}
+
+.resources {
+  background: #eee6d8;
+}
+
+.resource-grid {
+  margin-top: 30px;
+}
+
+.resource-item {
+  min-height: 300px;
+}
+
+.contact-lines {
+  border-top: 1px solid rgba(255, 250, 240, 0.2);
+  display: grid;
+  gap: 14px;
+  margin-top: 34px;
+  padding-top: 28px;
+}
+
+.contact-lines a,
+.text-link {
+  color: var(--gold);
+  display: inline-flex;
+  font-weight: 900;
+  margin-top: 28px;
+}
+
+.contact-lines a {
+  margin-top: 0;
 }
 
 @media (max-width: 920px) {
@@ -732,7 +976,9 @@ legend {
   .trust-bar,
   .statement,
   .showcase,
-  .planner {
+  .planner,
+  .split-feature,
+  .detail-list {
     grid-template-columns: 1fr;
   }
 
@@ -751,7 +997,11 @@ legend {
 
   .masonry,
   .milestones,
-  .process-track {
+  .process-track,
+  .spec-grid,
+  .portfolio-deep,
+  .resource-grid,
+  .milestone-band {
     grid-template-columns: 1fr;
   }
 

@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project Gallery | Bee Happy Building Systems</title>
+    <meta name="description" content="Explore Bee Happy Building Systems barndominiums, shops, garages, commercial, and agricultural building examples." />
+    <link rel="stylesheet" href="/src/styles.css" />
+  </head>
+  <body>
+    <header class="site-header" data-header>
+      <a class="brand" href="/"><span class="brand-mark">BH</span><span>Bee Happy<br />Building Systems</span></a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span></span><span></span></button>
+      <nav id="site-nav" class="site-nav">
+        <a href="/barndominiums/">Barndominiums</a><a href="/commercial-buildings/">Commercial</a><a href="/shops-garages/">Shops & Garages</a><a href="/gallery/" aria-current="page">Gallery</a><a href="/build-process/">Process</a><a href="/about/">About</a><a href="/faq/">FAQ</a><a href="/financing/">Financing</a><a href="/resources/">Resources</a><a class="nav-cta" href="/contact/">Contact</a>
+      </nav>
+    </header>
+    <main>
+      <section class="gallery-hero section-pad">
+        <p class="eyebrow">Project Gallery</p>
+        <h1>Buildings worth slowing down to look at.</h1>
+        <p>Real Bee Happy photography should live here. Until then, this gallery establishes the editorial system for homes, shops, commercial work, and ranch structures.</p>
+      </section>
+      <section class="gallery section-pad compact-top">
+        <div class="filter-row" aria-label="Gallery category filters">
+          <button class="filter active" data-filter="all" type="button">All</button><button class="filter" data-filter="home" type="button">Homes</button><button class="filter" data-filter="shop" type="button">Shops</button><button class="filter" data-filter="commercial" type="button">Commercial</button><button class="filter" data-filter="ag" type="button">Agricultural</button>
+        </div>
+        <div class="masonry expanded">
+          <figure class="project-tile tall" data-category="home"><img src="/assets/east-texas-barndominium-hero.png" alt="Barndominium exterior" /><figcaption><span>Bronze Ridge Home</span><small>Barndominium</small></figcaption></figure>
+          <figure class="project-tile" data-category="shop"><div class="photo-tone shop"></div><figcaption><span>Tool Barn</span><small>Shop</small></figcaption></figure>
+          <figure class="project-tile wide" data-category="commercial"><div class="photo-tone commercial"></div><figcaption><span>Community Facility</span><small>Commercial</small></figcaption></figure>
+          <figure class="project-tile" data-category="ag"><div class="photo-tone ag"></div><figcaption><span>Equipment Shelter</span><small>Agricultural</small></figcaption></figure>
+          <figure class="project-tile tall" data-category="home"><div class="photo-tone interior"></div><figcaption><span>Warm Interior</span><small>Residential</small></figcaption></figure>
+          <figure class="project-tile wide" data-category="shop"><div class="photo-tone shop"></div><figcaption><span>Weekend Workshop</span><small>Garage</small></figcaption></figure>
+        </div>
+      </section>
+      <section class="final-cta small"><img src="/assets/east-texas-barndominium-hero.png" alt="Completed project at sunset" loading="lazy" /><div><h2>Ready to see your project in the gallery someday?</h2><a class="button primary" href="/contact/">Start Your Project</a></div></section>
+    </main>
+    <a class="floating-cta" href="/contact/">Consultation</a>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

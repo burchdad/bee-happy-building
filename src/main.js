@@ -12,21 +12,25 @@ const processCopy = [
   "The finished building is reviewed with care so the handoff feels complete, confident, and ready for use."
 ];
 
-window.addEventListener("scroll", () => {
-  header.classList.toggle("scrolled", window.scrollY > 24);
-});
+if (header) {
+  window.addEventListener("scroll", () => {
+    header.classList.toggle("scrolled", window.scrollY > 24);
+  });
+}
 
-navToggle.addEventListener("click", () => {
-  const open = body.classList.toggle("nav-open");
-  navToggle.setAttribute("aria-expanded", String(open));
-});
+if (navToggle && nav) {
+  navToggle.addEventListener("click", () => {
+    const open = body.classList.toggle("nav-open");
+    navToggle.setAttribute("aria-expanded", String(open));
+  });
 
-nav.addEventListener("click", event => {
-  if (event.target.matches("a")) {
-    body.classList.remove("nav-open");
-    navToggle.setAttribute("aria-expanded", "false");
-  }
-});
+  nav.addEventListener("click", event => {
+    if (event.target.matches("a")) {
+      body.classList.remove("nav-open");
+      navToggle.setAttribute("aria-expanded", "false");
+    }
+  });
+}
 
 document.querySelectorAll(".service-panel").forEach(panel => {
   panel.addEventListener("pointerenter", () => setActive(panel, ".service-panel"));
@@ -50,11 +54,14 @@ document.querySelectorAll(".step").forEach((button, index) => {
   });
 });
 
-const search = document.querySelector("[data-faq-search]");
-search.addEventListener("input", () => {
-  const query = search.value.trim().toLowerCase();
-  document.querySelectorAll(".faq-list details").forEach(item => {
-    item.hidden = query && !item.textContent.toLowerCase().includes(query);
+const searches = document.querySelectorAll("[data-faq-search], [data-resource-search]");
+searches.forEach(search => {
+  search.addEventListener("input", () => {
+    const query = search.value.trim().toLowerCase();
+    const target = search.dataset.resourceSearch !== undefined ? ".resource-item" : ".faq-list details";
+    document.querySelectorAll(target).forEach(item => {
+      item.hidden = query && !item.textContent.toLowerCase().includes(query);
+    });
   });
 });
 
@@ -73,44 +80,47 @@ const revealObserver = new IntersectionObserver(
 document.querySelectorAll(".reveal").forEach(item => revealObserver.observe(item));
 
 const planner = document.querySelector("[data-planner]");
-const steps = [...planner.querySelectorAll(".planner-step")];
-const next = planner.querySelector("[data-next]");
-const prev = planner.querySelector("[data-prev]");
-const progress = planner.querySelector("[data-progress]");
-let activeStep = 0;
 
-function updatePlanner() {
-  steps.forEach((step, index) => step.classList.toggle("active", index === activeStep));
-  progress.style.width = `${((activeStep + 1) / steps.length) * 100}%`;
-  prev.hidden = activeStep === 0;
-  next.textContent = activeStep === steps.length - 1 ? "Request Consultation" : "Next";
-}
+if (planner) {
+  const steps = [...planner.querySelectorAll(".planner-step")];
+  const next = planner.querySelector("[data-next]");
+  const prev = planner.querySelector("[data-prev]");
+  const progress = planner.querySelector("[data-progress]");
+  let activeStep = 0;
 
-next.addEventListener("click", () => {
-  const current = steps[activeStep];
-  const fields = [...current.querySelectorAll("input, select")].filter(field => field.required);
-  const valid = fields.every(field => field.reportValidity());
-
-  if (!valid) return;
-
-  if (activeStep < steps.length - 1) {
-    activeStep += 1;
-    updatePlanner();
-    return;
+  function updatePlanner() {
+    steps.forEach((step, index) => step.classList.toggle("active", index === activeStep));
+    progress.style.width = `${((activeStep + 1) / steps.length) * 100}%`;
+    prev.hidden = activeStep === 0;
+    next.textContent = activeStep === steps.length - 1 ? "Request Consultation" : "Next";
   }
 
-  next.textContent = "Planner Saved";
-  next.disabled = true;
-  planner.dataset.status = "ready-for-crm";
-});
+  next.addEventListener("click", () => {
+    const current = steps[activeStep];
+    const fields = [...current.querySelectorAll("input, select")].filter(field => field.required);
+    const valid = fields.every(field => field.reportValidity());
 
-prev.addEventListener("click", () => {
-  activeStep = Math.max(0, activeStep - 1);
+    if (!valid) return;
+
+    if (activeStep < steps.length - 1) {
+      activeStep += 1;
+      updatePlanner();
+      return;
+    }
+
+    next.textContent = "Planner Saved";
+    next.disabled = true;
+    planner.dataset.status = "ready-for-crm";
+  });
+
+  prev.addEventListener("click", () => {
+    activeStep = Math.max(0, activeStep - 1);
+    updatePlanner();
+  });
+
   updatePlanner();
-});
+}
 
 function setActive(activeItem, selector) {
   document.querySelectorAll(selector).forEach(item => item.classList.toggle("active", item === activeItem));
 }
-
-updatePlanner();

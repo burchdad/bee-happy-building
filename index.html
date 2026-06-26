@@ -33,7 +33,7 @@
   </head>
   <body>
     <header class="site-header" data-header>
-      <a class="brand" href="#top" aria-label="Bee Happy Building Systems home">
+      <a class="brand" href="/" aria-label="Bee Happy Building Systems home">
         <span class="brand-mark">BH</span>
         <span>Bee Happy<br />Building Systems</span>
       </a>
@@ -41,12 +41,16 @@
         <span></span><span></span>
       </button>
       <nav id="site-nav" class="site-nav">
-        <a href="#barndominiums">Barndominiums</a>
-        <a href="#commercial">Commercial</a>
-        <a href="#gallery">Gallery</a>
-        <a href="#process">Process</a>
-        <a href="#faq">FAQ</a>
-        <a class="nav-cta" href="#planner">Start Your Project</a>
+        <a href="/barndominiums/">Barndominiums</a>
+        <a href="/commercial-buildings/">Commercial</a>
+        <a href="/shops-garages/">Shops & Garages</a>
+        <a href="/gallery/">Gallery</a>
+        <a href="/build-process/">Process</a>
+        <a href="/about/">About</a>
+        <a href="/faq/">FAQ</a>
+        <a href="/financing/">Financing</a>
+        <a href="/resources/">Resources</a>
+        <a class="nav-cta" href="/contact/">Contact</a>
       </nav>
     </header>
 
@@ -62,8 +66,8 @@
             2007.
           </p>
           <div class="hero-actions">
-            <a class="button primary" href="#planner">Start Your Project</a>
-            <a class="button secondary" href="#gallery">Explore Our Work</a>
+            <a class="button primary" href="/contact/">Start Your Project</a>
+            <a class="button secondary" href="/gallery/">Explore Our Work</a>
           </div>
         </div>
         <div class="trust-bar" aria-label="Company trust indicators">
@@ -85,30 +89,30 @@
         </p>
       </section>
 
-      <section id="barndominiums" class="services">
-        <article class="service-panel active" tabindex="0">
+      <section class="services" aria-label="Featured services">
+        <a class="service-panel active" href="/barndominiums/">
           <span>01</span>
           <h2>Custom Barndominiums</h2>
           <p>Modern ranch living with thoughtful plans, durable envelopes, and finishes that feel like home.</p>
-        </article>
-        <article class="service-panel" tabindex="0">
+        </a>
+        <a class="service-panel" href="/commercial-buildings/">
           <span>02</span>
           <h2>Commercial Buildings</h2>
           <p>Clean, capable, long-life structures for churches, offices, warehouses, retail, and industrial uses.</p>
-        </article>
-        <article class="service-panel" tabindex="0">
+        </a>
+        <a class="service-panel" href="/shops-garages/">
           <span>03</span>
           <h2>Shops & Garages</h2>
           <p>Purpose-built space for tools, toys, trades, and the work that happens after the house is quiet.</p>
-        </article>
-        <article class="service-panel" tabindex="0">
+        </a>
+        <a class="service-panel" href="/resources/">
           <span>04</span>
           <h2>Agricultural Buildings</h2>
           <p>Ranch-ready barns, equipment shelters, hay storage, and horse-property structures designed for use.</p>
-        </article>
+        </a>
       </section>
 
-      <section id="gallery" class="gallery section-pad">
+      <section class="gallery section-pad">
         <div class="section-heading reveal">
           <p class="eyebrow">Project Gallery</p>
           <h2>Beautiful buildings, honest materials, lasting value.</h2>
@@ -142,6 +146,7 @@
             <figcaption><span>Warm Interior Finish</span><small>Living Space</small></figcaption>
           </figure>
         </div>
+        <a class="text-link" href="/gallery/">View the full gallery</a>
       </section>
 
       <section class="why section-pad">
@@ -156,7 +161,7 @@
         </div>
       </section>
 
-      <section id="process" class="process section-pad">
+      <section class="process section-pad">
         <div class="section-heading reveal">
           <p class="eyebrow">The Build Process</p>
           <h2>Calm, clear, and guided from first idea to final walkthrough.</h2>
@@ -172,6 +177,7 @@
         <p class="process-detail" data-process-detail>
           We listen first: property goals, lifestyle, timeline, budget, land, utilities, and must-have spaces.
         </p>
+        <a class="text-link" href="/build-process/">See the full build process</a>
       </section>
 
       <section class="showcase section-pad">
@@ -186,17 +192,17 @@
         </div>
       </section>
 
-      <section id="commercial" class="commercial section-pad">
+      <section class="commercial section-pad">
         <div class="section-heading reveal">
           <p class="eyebrow">Commercial Projects</p>
           <h2>Capable structures for the organizations that keep East Texas moving.</h2>
         </div>
         <div class="portfolio-row">
-          <button type="button">Warehouse</button>
-          <button type="button">Church</button>
-          <button type="button">Office</button>
-          <button type="button">Retail</button>
-          <button type="button">Industrial</button>
+          <a href="/commercial-buildings/">Warehouse</a>
+          <a href="/commercial-buildings/">Church</a>
+          <a href="/commercial-buildings/">Office</a>
+          <a href="/commercial-buildings/">Retail</a>
+          <a href="/commercial-buildings/">Industrial</a>
         </div>
       </section>
 
@@ -210,7 +216,7 @@
         </div>
       </section>
 
-      <section id="faq" class="faq section-pad">
+      <section class="faq section-pad">
         <div class="section-heading reveal">
           <p class="eyebrow">FAQ</p>
           <h2>Answers before the first call.</h2>
@@ -237,89 +243,37 @@
             <p>Yes. The team can guide projects from planning through construction and final walkthrough.</p>
           </details>
         </div>
+        <a class="text-link" href="/faq/">Visit the full FAQ</a>
       </section>
 
-      <section id="planner" class="planner section-pad">
+      <section class="planner section-pad">
         <div class="planner-copy">
           <p class="eyebrow">Project Planner</p>
-          <h2>Tell us what you're dreaming about.</h2>
-          <p>This guided planner is designed to feed a CRM, scheduling flow, and project portal as the site grows.</p>
+          <h2>The serious conversation starts with a better first step.</h2>
+          <p>Use the dedicated planner page to outline project type, land, square footage, timeline, and budget.</p>
+          <a class="button primary" href="/contact/">Open Project Planner</a>
         </div>
-        <form class="planner-form" data-planner>
-          <div class="planner-progress"><span data-progress></span></div>
-          <fieldset class="planner-step active" data-step="0">
-            <legend>Project Type</legend>
-            <select name="projectType" required>
-              <option value="">Choose one</option>
-              <option>Custom Barndominium</option>
-              <option>Commercial Building</option>
-              <option>Shop or Garage</option>
-              <option>Agricultural Building</option>
-            </select>
-          </fieldset>
-          <fieldset class="planner-step" data-step="1">
-            <legend>County</legend>
-            <input name="county" placeholder="Smith, Gregg, Rusk..." required />
-          </fieldset>
-          <fieldset class="planner-step" data-step="2">
-            <legend>Desired Square Footage</legend>
-            <input name="squareFootage" type="number" min="400" step="100" placeholder="2400" required />
-          </fieldset>
-          <fieldset class="planner-step" data-step="3">
-            <legend>Timeline</legend>
-            <select name="timeline" required>
-              <option value="">Select timeline</option>
-              <option>As soon as possible</option>
-              <option>3-6 months</option>
-              <option>6-12 months</option>
-              <option>Just researching</option>
-            </select>
-          </fieldset>
-          <fieldset class="planner-step" data-step="4">
-            <legend>Estimated Budget</legend>
-            <select name="budget" required>
-              <option value="">Select range</option>
-              <option>$75k-$150k</option>
-              <option>$150k-$300k</option>
-              <option>$300k-$600k</option>
-              <option>$600k+</option>
-            </select>
-          </fieldset>
-          <fieldset class="planner-step" data-step="5">
-            <legend>Land Owned?</legend>
-            <div class="choice-row">
-              <label><input type="radio" name="land" value="yes" required /> Yes</label>
-              <label><input type="radio" name="land" value="no" /> Not yet</label>
-            </div>
-          </fieldset>
-          <fieldset class="planner-step" data-step="6">
-            <legend>Upload Inspiration Photos</legend>
-            <input name="inspiration" type="file" multiple accept="image/*" />
-          </fieldset>
-          <fieldset class="planner-step" data-step="7">
-            <legend>Schedule Consultation</legend>
-            <input name="name" placeholder="Name" required />
-            <input name="phone" placeholder="Phone" required />
-            <input name="email" type="email" placeholder="Email" required />
-          </fieldset>
-          <div class="planner-actions">
-            <button class="button secondary" data-prev type="button">Back</button>
-            <button class="button primary" data-next type="button">Next</button>
-          </div>
-        </form>
+        <div class="planner-preview" aria-label="Project planner preview">
+          <span>01 Project Type</span>
+          <span>02 County</span>
+          <span>03 Square Footage</span>
+          <span>04 Timeline</span>
+          <span>05 Budget</span>
+          <span>06 Consultation</span>
+        </div>
       </section>
 
       <section class="final-cta">
         <img src="/assets/east-texas-barndominium-hero.png" alt="Aerial ranch property at sunset" loading="lazy" />
         <div>
           <h2>Let's Build Something That Lasts Generations.</h2>
-          <a class="button primary" href="#planner">Schedule Consultation</a>
+          <a class="button primary" href="/contact/">Schedule Consultation</a>
           <a class="button secondary" href="tel:+19030000000">Call Now</a>
         </div>
       </section>
     </main>
 
-    <a class="floating-cta" href="#planner">Consultation</a>
+    <a class="floating-cta" href="/contact/">Consultation</a>
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
