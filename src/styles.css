@@ -1,0 +1,797 @@
+:root {
+  --cream: #f7f2e8;
+  --paper: #fffaf0;
+  --ink: #241f17;
+  --muted: #6f675b;
+  --cedar: #8a5837;
+  --bronze: #2f291f;
+  --forest: #243f2f;
+  --moss: #657259;
+  --gold: #b58a43;
+  --line: rgba(36, 31, 23, 0.16);
+  --shadow: 0 24px 70px rgba(36, 31, 23, 0.18);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: var(--ink);
+  background: var(--cream);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--cream);
+}
+
+body.nav-open {
+  overflow: hidden;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+.site-header {
+  align-items: center;
+  color: var(--paper);
+  display: flex;
+  inset: 0 0 auto;
+  justify-content: space-between;
+  padding: 24px clamp(20px, 4vw, 58px);
+  position: fixed;
+  transition: background 220ms ease, color 220ms ease, padding 220ms ease;
+  z-index: 20;
+}
+
+.site-header.scrolled {
+  background: rgba(247, 242, 232, 0.91);
+  backdrop-filter: blur(18px);
+  color: var(--ink);
+  padding-block: 14px;
+}
+
+.brand {
+  align-items: center;
+  display: flex;
+  font-size: 0.72rem;
+  font-weight: 800;
+  gap: 12px;
+  letter-spacing: 0.08em;
+  line-height: 1.05;
+  text-transform: uppercase;
+}
+
+.brand-mark {
+  align-items: center;
+  background: var(--gold);
+  border-radius: 50%;
+  color: var(--ink);
+  display: inline-flex;
+  font-weight: 900;
+  height: 42px;
+  justify-content: center;
+  letter-spacing: 0;
+  width: 42px;
+}
+
+.site-nav {
+  align-items: center;
+  display: flex;
+  gap: clamp(16px, 2.2vw, 32px);
+  font-size: 0.84rem;
+  font-weight: 700;
+}
+
+.nav-cta {
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  padding: 12px 18px;
+}
+
+.nav-toggle {
+  background: transparent;
+  border: 0;
+  display: none;
+  height: 44px;
+  padding: 0;
+  position: relative;
+  width: 44px;
+  z-index: 22;
+}
+
+.nav-toggle span {
+  background: currentColor;
+  display: block;
+  height: 2px;
+  margin: 8px;
+}
+
+.hero {
+  color: var(--paper);
+  min-height: 100svh;
+  overflow: hidden;
+  position: relative;
+}
+
+.hero > img,
+.final-cta > img {
+  height: 100%;
+  inset: 0;
+  object-fit: cover;
+  position: absolute;
+}
+
+.hero-shade {
+  background: linear-gradient(90deg, rgba(22, 17, 12, 0.82), rgba(22, 17, 12, 0.24) 58%, rgba(22, 17, 12, 0.16));
+  inset: 0;
+  position: absolute;
+}
+
+.hero-content {
+  max-width: 850px;
+  padding: 28svh clamp(22px, 7vw, 92px) 18svh;
+  position: relative;
+  z-index: 2;
+}
+
+.eyebrow {
+  color: var(--gold);
+  font-size: 0.77rem;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  margin: 0 0 18px;
+  text-transform: uppercase;
+}
+
+h1,
+h2 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 0.95;
+  margin: 0;
+}
+
+h1 {
+  font-size: clamp(4rem, 10vw, 9.8rem);
+}
+
+h2 {
+  font-size: clamp(2.6rem, 6vw, 6.7rem);
+}
+
+.hero-content p:not(.eyebrow) {
+  font-size: clamp(1.05rem, 2vw, 1.45rem);
+  line-height: 1.6;
+  max-width: 760px;
+}
+
+.button {
+  align-items: center;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  display: inline-flex;
+  font-weight: 850;
+  justify-content: center;
+  min-height: 50px;
+  padding: 14px 22px;
+  transition: transform 180ms ease, background 180ms ease, color 180ms ease;
+}
+
+.button:hover,
+.service-panel:hover,
+.project-tile:hover {
+  transform: translateY(-3px);
+}
+
+.primary {
+  background: var(--gold);
+  color: var(--ink);
+}
+
+.secondary {
+  border-color: currentColor;
+  color: inherit;
+}
+
+.hero-actions,
+.planner-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.trust-bar {
+  align-items: center;
+  backdrop-filter: blur(18px);
+  background: rgba(247, 242, 232, 0.1);
+  border-top: 1px solid rgba(255, 250, 240, 0.18);
+  bottom: 0;
+  display: grid;
+  font-size: 0.82rem;
+  font-weight: 800;
+  gap: 1px;
+  grid-template-columns: repeat(4, 1fr);
+  left: 0;
+  position: absolute;
+  right: 0;
+  z-index: 3;
+}
+
+.trust-bar span {
+  padding: 22px clamp(12px, 3vw, 42px);
+}
+
+.section-pad {
+  padding: clamp(88px, 11vw, 170px) clamp(22px, 6vw, 84px);
+}
+
+.statement {
+  align-items: end;
+  display: grid;
+  gap: clamp(32px, 8vw, 100px);
+  grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.8fr);
+}
+
+.statement-text,
+.showcase-copy p,
+.planner-copy p,
+.process-detail {
+  color: var(--muted);
+  font-size: clamp(1.05rem, 1.6vw, 1.35rem);
+  line-height: 1.75;
+}
+
+.services {
+  display: grid;
+  min-height: 76svh;
+}
+
+.service-panel {
+  background: linear-gradient(115deg, rgba(36, 63, 47, 0.94), rgba(47, 41, 31, 0.88)), url("/assets/east-texas-barndominium-hero.png") center/cover;
+  color: var(--paper);
+  cursor: pointer;
+  display: grid;
+  gap: 22px;
+  grid-template-columns: 80px minmax(0, 0.9fr) minmax(240px, 0.65fr);
+  min-height: 170px;
+  padding: clamp(28px, 4vw, 56px) clamp(22px, 6vw, 84px);
+  place-items: center start;
+  transition: min-height 260ms ease, transform 180ms ease;
+}
+
+.service-panel:nth-child(2) {
+  background-position: 50% 62%;
+}
+
+.service-panel:nth-child(3) {
+  background-position: 50% 72%;
+}
+
+.service-panel:nth-child(4) {
+  background-position: 50% 82%;
+}
+
+.service-panel.active,
+.service-panel:hover {
+  min-height: 330px;
+}
+
+.service-panel span {
+  color: var(--gold);
+  font-weight: 900;
+}
+
+.service-panel p {
+  font-size: 1.05rem;
+  line-height: 1.65;
+  margin: 0;
+}
+
+.section-heading {
+  max-width: 980px;
+}
+
+.filter-row,
+.portfolio-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 42px 0;
+}
+
+.filter,
+.portfolio-row button {
+  background: transparent;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--ink);
+  cursor: pointer;
+  font-weight: 800;
+  padding: 12px 18px;
+}
+
+.filter.active {
+  background: var(--forest);
+  color: var(--paper);
+}
+
+.masonry {
+  display: grid;
+  gap: 18px;
+  grid-auto-flow: dense;
+  grid-auto-rows: 180px;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.project-tile {
+  background: var(--bronze);
+  color: var(--paper);
+  margin: 0;
+  min-height: 220px;
+  overflow: hidden;
+  position: relative;
+  transition: opacity 180ms ease, transform 180ms ease;
+}
+
+.project-tile.hidden {
+  display: none;
+}
+
+.project-tile.tall {
+  grid-row: span 3;
+}
+
+.project-tile.wide {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.project-tile img,
+.photo-tone {
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+}
+
+.photo-tone {
+  background:
+    radial-gradient(circle at 20% 18%, rgba(181, 138, 67, 0.45), transparent 28%),
+    linear-gradient(135deg, rgba(36, 63, 47, 0.92), rgba(138, 88, 55, 0.68)),
+    url("/assets/east-texas-barndominium-hero.png") center/cover;
+  inset: 0;
+  width: 100%;
+}
+
+.photo-tone.shop {
+  filter: sepia(0.28) saturate(0.82);
+}
+
+.photo-tone.commercial {
+  filter: grayscale(0.25) contrast(1.1);
+}
+
+.photo-tone.ag {
+  filter: hue-rotate(18deg) saturate(0.78);
+}
+
+.photo-tone.interior {
+  filter: sepia(0.42) brightness(1.08);
+}
+
+.project-tile::after {
+  background: linear-gradient(transparent, rgba(17, 13, 9, 0.82));
+  content: "";
+  inset: 40% 0 0;
+  position: absolute;
+}
+
+figcaption {
+  bottom: 22px;
+  display: grid;
+  gap: 4px;
+  left: 22px;
+  position: absolute;
+  z-index: 2;
+}
+
+figcaption span {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.45rem;
+}
+
+figcaption small {
+  color: rgba(255, 250, 240, 0.76);
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.why {
+  background: var(--forest);
+  color: var(--paper);
+}
+
+.milestones {
+  display: grid;
+  gap: 28px;
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 72px;
+}
+
+.milestones div {
+  border-top: 1px solid rgba(255, 250, 240, 0.28);
+  padding-top: 28px;
+}
+
+.milestones strong {
+  color: var(--gold);
+  display: block;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(3rem, 7vw, 7rem);
+  font-weight: 500;
+}
+
+.milestones span {
+  color: rgba(255, 250, 240, 0.78);
+  line-height: 1.7;
+}
+
+.process-track {
+  border-bottom: 1px solid var(--line);
+  display: grid;
+  gap: 8px;
+  grid-template-columns: repeat(6, 1fr);
+  margin: 54px 0 28px;
+}
+
+.step {
+  background: transparent;
+  border: 0;
+  border-bottom: 3px solid transparent;
+  color: var(--muted);
+  cursor: pointer;
+  display: grid;
+  font-weight: 900;
+  gap: 10px;
+  min-height: 88px;
+  padding: 14px 4px 18px;
+  text-align: left;
+}
+
+.step span {
+  color: var(--gold);
+  font-size: 0.78rem;
+}
+
+.step.active {
+  border-color: var(--forest);
+  color: var(--ink);
+}
+
+.showcase {
+  align-items: center;
+  display: grid;
+  gap: clamp(30px, 6vw, 90px);
+  grid-template-columns: minmax(0, 1.05fr) minmax(280px, 0.85fr);
+}
+
+.showcase-image {
+  aspect-ratio: 4 / 5;
+  background: url("/assets/east-texas-barndominium-hero.png") center/cover;
+  box-shadow: var(--shadow);
+}
+
+.commercial {
+  background: #ebe2d1;
+}
+
+.portfolio-row button {
+  border-radius: 0;
+  font-size: clamp(1.25rem, 3vw, 2.9rem);
+  padding: 18px 24px;
+}
+
+.testimonials {
+  background: var(--bronze);
+  color: var(--paper);
+}
+
+.quote {
+  margin: auto;
+  max-width: 1100px;
+}
+
+.quote p {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2.5rem, 5vw, 5.8rem);
+  line-height: 1.08;
+  margin: 0 0 28px;
+}
+
+.quote span {
+  color: rgba(255, 250, 240, 0.65);
+  font-weight: 800;
+}
+
+.search-label {
+  display: grid;
+  gap: 10px;
+  margin: 42px 0 22px;
+  max-width: 520px;
+}
+
+.search-label span {
+  font-weight: 900;
+}
+
+input,
+select {
+  background: rgba(255, 250, 240, 0.82);
+  border: 1px solid var(--line);
+  border-radius: 0;
+  min-height: 54px;
+  padding: 0 16px;
+  width: 100%;
+}
+
+details {
+  border-top: 1px solid var(--line);
+  padding: 24px 0;
+}
+
+details:last-child {
+  border-bottom: 1px solid var(--line);
+}
+
+summary {
+  cursor: pointer;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.35rem, 3vw, 2.4rem);
+}
+
+details p {
+  color: var(--muted);
+  line-height: 1.8;
+  max-width: 760px;
+}
+
+.planner {
+  background: var(--forest);
+  color: var(--paper);
+  display: grid;
+  gap: clamp(30px, 6vw, 90px);
+  grid-template-columns: minmax(280px, 0.8fr) minmax(0, 1fr);
+}
+
+.planner-copy p {
+  color: rgba(255, 250, 240, 0.72);
+}
+
+.planner-form {
+  background: rgba(255, 250, 240, 0.08);
+  padding: clamp(24px, 4vw, 52px);
+}
+
+.planner-progress {
+  background: rgba(255, 250, 240, 0.16);
+  height: 4px;
+  margin-bottom: 34px;
+}
+
+.planner-progress span {
+  background: var(--gold);
+  display: block;
+  height: 100%;
+  transition: width 220ms ease;
+  width: 12.5%;
+}
+
+fieldset {
+  border: 0;
+  display: none;
+  margin: 0;
+  padding: 0;
+}
+
+fieldset.active {
+  display: grid;
+  gap: 18px;
+}
+
+legend {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2rem, 4vw, 4.2rem);
+  line-height: 1;
+  margin-bottom: 26px;
+}
+
+.choice-row {
+  display: flex;
+  gap: 12px;
+}
+
+.choice-row label {
+  align-items: center;
+  border: 1px solid rgba(255, 250, 240, 0.32);
+  display: flex;
+  flex: 1;
+  gap: 10px;
+  min-height: 64px;
+  padding: 16px;
+}
+
+.choice-row input {
+  min-height: auto;
+  width: auto;
+}
+
+.planner-actions {
+  margin-top: 34px;
+}
+
+.final-cta {
+  align-items: center;
+  color: var(--paper);
+  display: grid;
+  min-height: 78svh;
+  overflow: hidden;
+  padding: clamp(80px, 12vw, 150px) clamp(22px, 7vw, 96px);
+  position: relative;
+}
+
+.final-cta::before {
+  background: rgba(22, 17, 12, 0.62);
+  content: "";
+  inset: 0;
+  position: absolute;
+  z-index: 1;
+}
+
+.final-cta div {
+  max-width: 970px;
+  position: relative;
+  z-index: 2;
+}
+
+.final-cta .button {
+  margin: 26px 10px 0 0;
+}
+
+.floating-cta {
+  background: var(--gold);
+  border-radius: 999px;
+  bottom: 18px;
+  box-shadow: var(--shadow);
+  color: var(--ink);
+  font-size: 0.88rem;
+  font-weight: 900;
+  padding: 14px 18px;
+  position: fixed;
+  right: 18px;
+  z-index: 18;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 700ms ease, transform 700ms ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 920px) {
+  .nav-toggle {
+    color: inherit;
+    display: block;
+  }
+
+  .site-nav {
+    align-content: center;
+    background: var(--forest);
+    color: var(--paper);
+    display: grid;
+    font-size: 1.55rem;
+    gap: 24px;
+    inset: 0;
+    justify-content: start;
+    opacity: 0;
+    padding: 110px 28px 40px;
+    pointer-events: none;
+    position: fixed;
+    transform: translateY(-10px);
+    transition: opacity 180ms ease, transform 180ms ease;
+  }
+
+  body.nav-open .site-nav {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  .trust-bar,
+  .statement,
+  .showcase,
+  .planner {
+    grid-template-columns: 1fr;
+  }
+
+  .trust-bar {
+    position: relative;
+  }
+
+  .trust-bar span {
+    border-top: 1px solid rgba(255, 250, 240, 0.12);
+    padding: 15px 22px;
+  }
+
+  .service-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .masonry,
+  .milestones,
+  .process-track {
+    grid-template-columns: 1fr;
+  }
+
+  .project-tile,
+  .project-tile.tall,
+  .project-tile.wide {
+    grid-column: auto;
+    grid-row: span 2;
+  }
+}
+
+@media (max-width: 620px) {
+  h1 {
+    font-size: clamp(3.4rem, 18vw, 5rem);
+  }
+
+  .hero-content {
+    padding-top: 20svh;
+  }
+
+  .hero-actions .button,
+  .planner-actions .button {
+    width: 100%;
+  }
+
+  .choice-row {
+    flex-direction: column;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition: none !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
