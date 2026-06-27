@@ -30,6 +30,54 @@
           <div class="planner-actions"><button class="button secondary" data-prev type="button">Back</button><button class="button primary" data-next type="button">Next</button></div>
         </form>
       </section>
+      <section class="estimator section-pad">
+        <div class="section-heading">
+          <p class="eyebrow">Project Budget Estimator</p>
+          <h2>Get a planning range before the first call.</h2>
+        </div>
+        <form class="estimator-panel" data-estimator>
+          <label>
+            <span>Building Type</span>
+            <select name="type">
+              <option value="155">Barndominium / Ranch Home</option>
+              <option value="92">Commercial Building</option>
+              <option value="68">Shop or Garage</option>
+              <option value="58">Agricultural Building</option>
+            </select>
+          </label>
+          <label>
+            <span>Square Footage</span>
+            <input name="size" type="number" min="400" step="100" value="2400" />
+          </label>
+          <label>
+            <span>Finish Level</span>
+            <select name="finish">
+              <option value="1">Shell / Utility</option>
+              <option value="1.28">Finished Practical</option>
+              <option value="1.62" selected>Premium Residential</option>
+              <option value="2.05">Luxury Custom</option>
+            </select>
+          </label>
+          <label>
+            <span>Concrete & Site Complexity</span>
+            <select name="site">
+              <option value="0.92">Simple</option>
+              <option value="1" selected>Typical</option>
+              <option value="1.18">Complex</option>
+            </select>
+          </label>
+          <label>
+            <span>Insulation / Climate Control</span>
+            <select name="comfort">
+              <option value="0">Not needed</option>
+              <option value="14000">Insulated</option>
+              <option value="32000">Insulated + climate planning</option>
+            </select>
+          </label>
+          <output class="estimate-output" data-estimate>$372k - $465k</output>
+          <p>Planning ranges are directional only. Site work, utilities, engineering, finish selections, porches, doors, and lender requirements can materially change the final proposal.</p>
+        </form>
+      </section>
     </main>
     <script type="module" src="/src/main.js"></script>
   </body>

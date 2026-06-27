@@ -5,11 +5,11 @@ const nav = document.querySelector(".site-nav");
 
 const processCopy = [
   "We listen first: property goals, lifestyle, timeline, budget, land, utilities, and must-have spaces.",
-  "Your ideas turn into a practical building direction with layouts, finishes, access, storage, and future use in mind.",
-  "The proposal clarifies scope, expectations, allowances, and the decisions needed before construction begins.",
-  "Planning aligns site conditions, scheduling, materials, documents, and communication before crews mobilize.",
-  "Construction is guided by craft, sequencing, updates, and a respect for the property Bee Happy is trusted to improve.",
-  "The finished building is reviewed with care so the handoff feels complete, confident, and ready for use."
+  "A site visit clarifies access, drainage, utilities, approach, views, and the small property realities that shape a better build.",
+  "Planning turns ideas into a practical direction for layout, scope, materials, budget priorities, and schedule expectations.",
+  "Engineering and permitting align drawings, structure, code needs, documentation, and pre-construction decisions.",
+  "Construction is guided by craft, sequencing, updates, and respect for the property Bee Happy is trusted to improve.",
+  "The walkthrough and warranty handoff make the finished building feel complete, documented, and ready for the next chapter."
 ];
 
 if (header) {
@@ -119,6 +119,37 @@ if (planner) {
   });
 
   updatePlanner();
+}
+
+const estimator = document.querySelector("[data-estimator]");
+
+if (estimator) {
+  const output = estimator.querySelector("[data-estimate]");
+  const fields = [...estimator.querySelectorAll("input, select")];
+
+  function formatEstimate(value) {
+    return new Intl.NumberFormat("en-US", {
+      style: "currency",
+      currency: "USD",
+      maximumFractionDigits: 0
+    }).format(value);
+  }
+
+  function updateEstimate() {
+    const values = Object.fromEntries(new FormData(estimator).entries());
+    const typeRate = Number(values.type);
+    const size = Math.max(Number(values.size) || 0, 400);
+    const finish = Number(values.finish);
+    const site = Number(values.site);
+    const comfort = Number(values.comfort);
+    const midpoint = size * typeRate * finish * site + comfort;
+    const low = Math.round(midpoint * 0.9 / 1000) * 1000;
+    const high = Math.round(midpoint * 1.18 / 1000) * 1000;
+    output.textContent = `${formatEstimate(low)} - ${formatEstimate(high)}`;
+  }
+
+  fields.forEach(field => field.addEventListener("input", updateEstimate));
+  updateEstimate();
 }
 
 function setActive(activeItem, selector) {

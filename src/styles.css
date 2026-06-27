@@ -428,6 +428,18 @@ figcaption small {
   text-transform: uppercase;
 }
 
+figcaption p {
+  color: rgba(255, 250, 240, 0.76);
+  line-height: 1.55;
+  margin: 8px 0 0;
+  max-width: 520px;
+}
+
+.story-tile figcaption {
+  bottom: 26px;
+  right: 24px;
+}
+
 .why {
   background: var(--forest);
   color: var(--paper);
@@ -671,6 +683,78 @@ legend {
   padding: 18px 0;
 }
 
+.digital-suite {
+  background: #ebe2d1;
+}
+
+.suite-grid {
+  display: grid;
+  gap: 1px;
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 56px;
+}
+
+.suite-grid article {
+  background: rgba(255, 250, 240, 0.58);
+  min-height: 270px;
+  padding: clamp(26px, 4vw, 46px);
+}
+
+.suite-grid span {
+  display: block;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.9rem, 3vw, 3.5rem);
+  line-height: 1;
+  margin-bottom: 22px;
+}
+
+.suite-grid p {
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+.estimator {
+  background: #eee6d8;
+}
+
+.estimator-panel {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: repeat(5, 1fr);
+  margin-top: 48px;
+}
+
+.estimator-panel label {
+  display: grid;
+  gap: 10px;
+}
+
+.estimator-panel label span {
+  font-size: 0.78rem;
+  font-weight: 950;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.estimate-output {
+  align-items: center;
+  background: var(--forest);
+  color: var(--paper);
+  display: flex;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2rem, 4vw, 4.6rem);
+  grid-column: 1 / -1;
+  min-height: 150px;
+  padding: clamp(24px, 4vw, 44px);
+}
+
+.estimator-panel p {
+  color: var(--muted);
+  grid-column: 1 / -1;
+  line-height: 1.7;
+  max-width: 860px;
+}
+
 .final-cta {
   align-items: center;
   color: var(--paper);
@@ -715,6 +799,34 @@ legend {
   position: fixed;
   right: 18px;
   z-index: 18;
+}
+
+.site-footer {
+  background: var(--ink);
+  color: var(--paper);
+  display: grid;
+  gap: clamp(34px, 7vw, 96px);
+  grid-template-columns: minmax(260px, 0.8fr) minmax(280px, 1fr);
+  padding: clamp(54px, 8vw, 92px) clamp(22px, 7vw, 96px);
+}
+
+.site-footer p {
+  color: rgba(255, 250, 240, 0.66);
+  line-height: 1.75;
+  max-width: 520px;
+}
+
+.site-footer nav {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.site-footer nav a {
+  border-top: 1px solid rgba(255, 250, 240, 0.16);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.35rem, 2.6vw, 2.6rem);
+  padding-top: 14px;
 }
 
 .reveal {
@@ -1001,7 +1113,11 @@ legend {
   .spec-grid,
   .portfolio-deep,
   .resource-grid,
-  .milestone-band {
+  .milestone-band,
+  .suite-grid,
+  .estimator-panel,
+  .site-footer,
+  .site-footer nav {
     grid-template-columns: 1fr;
   }
 
