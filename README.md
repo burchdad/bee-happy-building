@@ -12,5 +12,5 @@ npm run dev
 ## Notes
 
 - The initial site is a static Vite build for speed, portability, and low hosting friction.
-- `assets/east-texas-barndominium-hero.png` is a generated placeholder image for layout and mood. Replace it with Bee Happy project photography before launch.
+- `assets/projects/red-barndo/` contains optimized Bee Happy project photography used throughout the site.
 - The project planner is wired as a front-end flow and marked for CRM integration.

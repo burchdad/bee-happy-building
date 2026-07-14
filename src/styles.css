@@ -143,14 +143,16 @@ select {
 }
 
 .hero-shade {
-  background: linear-gradient(90deg, rgba(22, 17, 12, 0.82), rgba(22, 17, 12, 0.24) 58%, rgba(22, 17, 12, 0.16));
+  background:
+    linear-gradient(90deg, rgba(22, 17, 12, 0.88), rgba(22, 17, 12, 0.34) 58%, rgba(22, 17, 12, 0.24)),
+    linear-gradient(0deg, rgba(22, 17, 12, 0.55), transparent 42%);
   inset: 0;
   position: absolute;
 }
 
 .hero-content {
-  max-width: 850px;
-  padding: 28svh clamp(22px, 7vw, 92px) 18svh;
+  max-width: 760px;
+  padding: 24svh clamp(22px, 7vw, 92px) 18svh;
   position: relative;
   z-index: 2;
 }
@@ -190,7 +192,7 @@ h2 {
 }
 
 h1 {
-  font-size: clamp(4rem, 10vw, 9.8rem);
+  font-size: clamp(3.2rem, 7vw, 7.4rem);
 }
 
 h2 {
@@ -200,7 +202,7 @@ h2 {
 .hero-content p:not(.eyebrow) {
   font-size: clamp(1.05rem, 2vw, 1.45rem);
   line-height: 1.6;
-  max-width: 760px;
+  max-width: 650px;
 }
 
 .button {
@@ -271,12 +273,52 @@ h2 {
 }
 
 .statement-text,
+.spotlight-copy p,
 .showcase-copy p,
 .planner-copy p,
 .process-detail {
   color: var(--muted);
   font-size: clamp(1.05rem, 1.6vw, 1.35rem);
   line-height: 1.75;
+}
+
+.project-spotlight {
+  align-items: center;
+  background: #eee6d8;
+  display: grid;
+  gap: clamp(34px, 6vw, 96px);
+  grid-template-columns: minmax(280px, 0.8fr) minmax(0, 1fr);
+}
+
+.spotlight-copy {
+  display: grid;
+  gap: 24px;
+}
+
+.spotlight-copy h2 {
+  font-size: clamp(2.4rem, 5vw, 5.8rem);
+}
+
+.spotlight-copy .button {
+  justify-self: start;
+}
+
+.spotlight-grid {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: 1fr 1fr;
+}
+
+.spotlight-grid img {
+  box-shadow: var(--shadow);
+  height: 100%;
+  min-height: 220px;
+  object-fit: cover;
+}
+
+.spotlight-grid img:first-child {
+  grid-row: span 2;
+  min-height: 520px;
 }
 
 .services {
@@ -305,7 +347,7 @@ h2 {
 }
 
 .service-panel {
-  background: linear-gradient(115deg, rgba(36, 63, 47, 0.94), rgba(47, 41, 31, 0.88)), url("/assets/east-texas-barndominium-hero.png") center/cover;
+  background: linear-gradient(115deg, rgba(36, 63, 47, 0.94), rgba(47, 41, 31, 0.82)), url("/assets/projects/red-barndo/red-barndo-hero.webp") center/cover;
   color: var(--paper);
   cursor: pointer;
   display: grid;
@@ -318,15 +360,18 @@ h2 {
 }
 
 .service-panel:nth-child(2) {
-  background-position: 50% 62%;
+  background-image: linear-gradient(115deg, rgba(36, 63, 47, 0.94), rgba(47, 41, 31, 0.82)), url("/assets/projects/red-barndo/red-barndo-frame.webp");
+  background-position: 50% 58%;
 }
 
 .service-panel:nth-child(3) {
-  background-position: 50% 72%;
+  background-image: linear-gradient(115deg, rgba(36, 63, 47, 0.94), rgba(47, 41, 31, 0.82)), url("/assets/projects/red-barndo/red-barndo-interior-open.webp");
+  background-position: 50% 68%;
 }
 
 .service-panel:nth-child(4) {
-  background-position: 50% 82%;
+  background-image: linear-gradient(115deg, rgba(36, 63, 47, 0.94), rgba(47, 41, 31, 0.82)), url("/assets/projects/red-barndo/red-barndo-front-progress.webp");
+  background-position: 50% 72%;
 }
 
 .service-panel.active,
@@ -415,7 +460,7 @@ h2 {
   background:
     radial-gradient(circle at 20% 18%, rgba(181, 138, 67, 0.45), transparent 28%),
     linear-gradient(135deg, rgba(36, 63, 47, 0.92), rgba(138, 88, 55, 0.68)),
-    url("/assets/east-texas-barndominium-hero.png") center/cover;
+    url("/assets/projects/red-barndo/red-barndo-hero.webp") center/cover;
   inset: 0;
   width: 100%;
 }
@@ -547,8 +592,12 @@ figcaption p {
 
 .showcase-image {
   aspect-ratio: 4 / 5;
-  background: url("/assets/east-texas-barndominium-hero.png") center/cover;
+  background: url("/assets/projects/red-barndo/red-barndo-hero.webp") center/cover;
   box-shadow: var(--shadow);
+}
+
+.showcase-image.red-barndo-showcase {
+  background-image: url("/assets/projects/red-barndo/red-barndo-interior-stairs.webp");
 }
 
 .commercial {
@@ -911,8 +960,8 @@ legend {
 
 .gallery-hero {
   background:
-    linear-gradient(90deg, rgba(36, 63, 47, 0.96), rgba(47, 41, 31, 0.86)),
-    url("/assets/east-texas-barndominium-hero.png") center/cover;
+    linear-gradient(90deg, rgba(36, 63, 47, 0.94), rgba(47, 41, 31, 0.74)),
+    url("/assets/projects/red-barndo/red-barndo-wide-front.webp") center/cover;
   display: grid;
   min-height: 64svh;
   place-content: end start;
@@ -955,7 +1004,7 @@ legend {
   aspect-ratio: 4 / 5;
   background:
     linear-gradient(180deg, rgba(36, 31, 23, 0.08), rgba(36, 31, 23, 0.18)),
-    url("/assets/east-texas-barndominium-hero.png") center/cover;
+    url("/assets/projects/red-barndo/red-barndo-interior-open.webp") center/cover;
   box-shadow: var(--shadow);
 }
 
@@ -1164,6 +1213,7 @@ legend {
 
   .trust-bar,
   .statement,
+  .project-spotlight,
   .showcase,
   .planner,
   .split-feature,
@@ -1198,6 +1248,15 @@ legend {
   .site-footer,
   .site-footer nav {
     grid-template-columns: 1fr;
+  }
+
+  .spotlight-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .spotlight-grid img:first-child {
+    grid-row: auto;
+    min-height: 340px;
   }
 
   .project-tile,
